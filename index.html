@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria's Busy Day Schedule!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4a69bd;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .schedule-table th {
+            background: #4a69bd;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        
+        .schedule-table tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .schedule-table tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #e9ecef;
+            transform: scale(1.01);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .schedule-table td {
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .time-cell {
+            font-weight: bold;
+            color: #4a69bd;
+            width: 25%;
+        }
+        
+        .task-cell {
+            width: 75%;
+        }
+        
+        .priority-high {
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .priority-medium {
+            border-left: 5px solid #f39c12;
+        }
+        
+        .priority-low {
+            border-left: 5px solid #27ae60;
+        }
+        
+        .meal {
+            background-color: #fff9e6 !important;
+        }
+        
+        .work {
+            background-color: #e6f7ff !important;
+        }
+        
+        .personal {
+            background-color: #f9f0ff !important;
+        }
+        
+        .break {
+            background-color: #f0fff4 !important;
+        }
+        
+        .evening {
+            background-color: #fff0f5 !important;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+            
+            .schedule-table th, 
+            .schedule-table td {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .schedule-table {
+                font-size: 0.8rem;
+            }
+            
+            .schedule-table th, 
+            .schedule-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Busy Day Schedule</h1>
+        
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="priority-high">
+                    <td class="time-cell">6:30 AM</td>
+                    <td class="task-cell">Wake up & morning routine</td>
+                </tr>
+                <tr class="work priority-high">
+                    <td class="time-cell">7:30 AM</td>
+                    <td class="task-cell">Check emails & plan day</td>
+                </tr>
+                <tr class="meal">
+                    <td class="time-cell">8:00 AM</td>
+                    <td class="task-cell">Breakfast</td>
+                </tr>
+                <tr class="work priority-high">
+                    <td class="time-cell">9:00 AM</td>
+                    <td class="task-cell">Go through my school subjects</td>
+                </tr>
+                <tr class="work priority-medium">
+                    <td class="time-cell">10:30 AM</td>
+                    <td class="task-cell">Practice Coding session</td>
+                </tr>
+                <tr class="break">
+                    <td class="time-cell">12:00 PM</td>
+                    <td class="task-cell">Short break & relax</td>
+                </tr>
+                <tr class="meal">
+                    <td class="time-cell">12:30 PM</td>
+                    <td class="task-cell">Lunch</td>
+                </tr>
+                <tr class="work priority-high">
+                    <td class="time-cell">1:30 PM</td>
+                    <td class="task-cell">Class video call</td>
+                </tr>
+                <tr class="work priority-medium">
+                    <td class="time-cell">3:00 PM</td>
+                    <td class="task-cell">Gym workout</td>
+                </tr>
+                <tr class="personal">
+                    <td class="time-cell">4:30 PM</td>
+                    <td class="task-cell">Grocery shopping</td>
+                </tr>
+                <tr class="personal priority-low">
+                    <td class="time-cell">5:30 PM</td>
+                    <td class="task-cell">Prepare dinner</td>
+                </tr>
+                <tr class="meal">
+                    <td class="time-cell">7:00 PM</td>
+                    <td class="task-cell">Dinner</td>
+                </tr>
+                <tr class="personal">
+                    <td class="time-cell">8:00 PM</td>
+                    <td class="task-cell">Bond with family</td>
+                </tr>
+                <tr class="evening priority-low">
+                    <td class="time-cell">9:30 PM</td>
+                    <td class="task-cell">Watch TV show</td>
+                </tr>
+                <tr class="priority-medium">
+                    <td class="time-cell">11:00 PM</td>
+                    <td class="task-cell">Prepare for next day & bedtime</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
